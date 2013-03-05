@@ -1,0 +1,48 @@
+
+COMPONENT VIEW
+
+TouchTable
+	HeaderRow
+		HeaderCell[]
+	TableBody (a DataView)
+		Container (autocreated by TableBody)
+			DataRow[]
+				DataCell[]
+			(GroupRow[])
+				(GroupCell[])
+	FooterRow
+		FooterCell[]
+
+
+CLASS VIEW
+
+Component
+	Container
+		TouchTable
+		DataView
+			TableBody <<<<<
+		TableRow
+			FrameRow
+				HeaderRow
+				FooterRow
+		DataItem <<<<<
+			BodyRow
+				DataRow
+				(GroupRow)
+	TableCell
+		FrameCell
+			HeaderCell
+			FooterCell
+				(ActionColumn)
+				(BooleanColumn)
+				(DateColumn)
+				(NumberColumn)
+				(TemplateColumn)
+		BodyCell
+			DataCell
+				(ActionColumn)
+				(BooleanColumn)
+				(DateColumn)
+				(NumberColumn)
+				(TemplateColumn)
+			(GroupCell)
