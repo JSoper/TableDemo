@@ -92,7 +92,7 @@ Ext.dom.Element.prototype.extspectString._name = 'Ext.dom.Element#extspectString
 Array.prototype.extspectString = function () { return StringOf.array$( this ); }; // typeof( [] ) -> 'object'
 Array.prototype.extspectString._name = 'Array#extspectString';
 
-// typeof( new Boolean( false ) ) -> 'object'
+// typeOf( new Boolean( false ) ) -> 'object'
 Boolean.prototype.extspectString = function () { return StringOf.embrace$( 'Bln', this ); };
 Boolean.prototype.extspectString._name = 'Boolean#extspectString';
 // console.log( new Boolean( false ).to$() )
@@ -100,7 +100,7 @@ Boolean.prototype.extspectString._name = 'Boolean#extspectString';
 Date.prototype.extspectString = function () { return StringOf.date$( this ); };
 Date.prototype.extspectString._name = 'Date#extspectString';
 
-// typeof( StringOf.to$ ) -> 'function'
+// typeOf( StringOf.to$ ) -> 'function'
 Function.prototype.extspectString = function () {
 	if ( "modelName" in this ) { return StringOf.embrace$( 'Model', StringOf.quote$( StringOf.functionName( this ) ) ); }
 	return StringOf.functionName( this ) + '()';
@@ -108,7 +108,7 @@ Function.prototype.extspectString = function () {
 Function.prototype.extspectString._name = 'Function#extspectString';
 // console.log( StringOf.to$.to$() )
 
-// typeof( new Number( '234' ) ) -> 'object'
+// typeOf( new Number( '234' ) ) -> 'object'
 Number.prototype.extspectString = function () { return StringOf.embrace$( 'Number', this ); };
 Number.prototype.extspectString._name = 'Number#extspectString';
 // console.log( new Number( '234' ).to$() )
@@ -116,7 +116,7 @@ Number.prototype.extspectString._name = 'Number#extspectString';
 RegExp.prototype.extspectString = function () { return StringOf.ellipsis$( StringOf.embrace$( 'RegExp', this ) ); };
 RegExp.prototype.extspectString._name = 'RegExp#extspectString';
 
-// typeof( new String( 'ABC' ) ) -> 'object'
+// typeOf( new String( 'ABC' ) ) -> 'object'
 String.prototype.extspectString = function () { return StringOf.embrace$( 'String', StringOf.quote$( this ) ); };
 String.prototype.extspectString._name = 'String#extspectString';
 // console.log( new String( 'ABC' ).to$() )
@@ -139,7 +139,7 @@ KeyboardEvent.prototype.extspectString = function () {
 KeyboardEvent.prototype.extspectString._name = 'KeyboardEvent#extspectString';
 
 MouseEvent.prototype.extspectString = function () {
-	var ux.StringOf.data$;
+	// var ux.StringOf.data$;
 	if ( "button" in this ) {
 		ux.StringOf.data$ = 'btn = ' + this.button + ' dtl(' + this.detail + ')' +
 			' @Clnt(' + this.clientX + ' ' + this.clientY + ')';
